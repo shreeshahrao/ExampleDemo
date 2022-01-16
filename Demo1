@@ -1,1 +1,47 @@
+var num = [2,3,4,5,6,9,7,1,0]
+var arr1 = ["hi","hello","bye"]
+ 
+extension Array where Element == String {
+    
+    func smallestElement() {
+        var small = self[0]
+        for i in 1..<self.count {
+            if self[i] < small {
+                small = self[i]
+                
+            }
+        }
+        print(small)
+    }
+    
+    func secondSmallest() {
+        var min1: String = "" , min2: String = ""
+        if self[0] < self[1]  {
+            min1 = self[0]
+            min2 = self[1]
+        }
+        else {
+            min1 = self[1]
+            min2 = self[0]        }
+        for i in self[2..<self.count] {
+            if i < min1 {
+                min2 = min1
+                min1 = i
+            }
+            else {
+                min2 = i
+            }
+        }
+        print("Second Min Element",min2)
+    }
+}
+//num.smallestElement()
+arr1.secondSmallest()
+
+
+
+
+
+
+
 
