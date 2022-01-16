@@ -1,0 +1,147 @@
+var num: Int = 3256
+
+extension Int {
+    
+    mutating func reverseANumber() -> Int {
+        var rem = 0 , reverse = 0
+        while self != 0 {
+            rem = self % 10
+            reverse = reverse * 10 + rem
+            self = self / 10
+            
+        }
+        return reverse
+    }
+}
+print(num.reverseANumber())
+
+var number = Int.max
+
+extension Int {
+    
+    mutating func sumOfDigits() -> Int {
+        var sum = 0
+        while self != 0 {
+            sum += self % 10
+            self = self / 10
+        }
+        return sum
+    }
+}
+print(number.sumOfDigits())
+
+
+
+let number = 20
+
+extension Int {
+    
+    func primeNumber() {
+        var count = 0
+        for i in 1...self {
+            if self % i == 0 {
+                count = count + 1
+            } }
+            if count == 0 || count == 1 {
+                print( "\(self) is not prime")
+            }
+            else if count > 2 {
+                print("\(self) is a prime number")
+            }
+        
+    }
+}
+number.primeNumber()
+
+
+
+var year1 = 2009
+var year3 = 1900
+var year2 = 2000
+var year4 = 2016
+var year5 = 2100
+
+extension Int {
+    
+    func leapYerar() {
+        if self % 400 == 0 || (self % 4 == 0 && self % 100 != 0) {
+            print("\(self) is a Leap Year")
+        }
+        else {
+            print("\(self) is not a Leap year")
+        }
+    }
+}
+year1.leapYerar()
+year2.leapYerar()
+year3.leapYerar()
+year4.leapYerar()
+year5.leapYerar()
+
+
+let arr: [Int] = [1,2,3,4,5,6,7,8,9]
+
+extension Array where Element == Int {
+    
+    func givenRangeSum(_ range1: Int ,_ range2: Int) -> String {
+        var sum: Int = 0
+        if range1 < 0 {
+            return  "Range1 is less than 0"
+            
+        }
+        else if range2 > self.count-1 {
+            return "Range2 is greater than arr count"
+            
+        }
+        else {for i in self[range1]...self[range2] {
+            sum = sum + i
+        }}
+        return "\(sum)"
+    }
+}
+print(arr.givenRangeSum(0, 10))
+
+
+var arr: [Int] = [1,2,3,4,5,6,7,89,4,5,4,5,55,9,9,9,99]
+
+extension Array where Element == Int {
+    
+    func oddNumber() {
+        var oddNumber: [Int] = []
+        for i in self {
+            if i%2 != 0 {
+                oddNumber.append(i)
+            }
+        }
+        print(oddNumber)
+    }
+    
+    func evenNumber() {
+        var evenNumber: [Int] = []
+        for i in self {
+            if i%2 == 0 {
+                evenNumber.append(i)
+            }
+        }
+        print(evenNumber)
+    }
+}
+
+arr.evenNumber()
+arr.oddNumber()
+
+
+var arr: [Int] = [10,20,30,40,50,60]
+
+extension Array where Element == Int {
+    
+    func sumOfNNumbers() -> Int {
+        var sum = 0
+        for i in self {
+            sum = sum + i
+        }
+        return sum
+    }
+}
+
+
